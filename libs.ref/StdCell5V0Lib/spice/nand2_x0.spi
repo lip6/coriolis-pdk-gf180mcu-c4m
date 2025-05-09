@@ -1,0 +1,7 @@
+* nand2_x0
+.subckt nand2_x0 vdd vss nq i0 i1
+Mn0 vss i0 int0 vss nfet_06v0 l=0.6um w=3.2um
+Mp0 vdd i0 nq vdd pfet_06v0 l=0.6um w=3.2um
+Mn1 int0 i1 nq vss nfet_06v0 l=0.6um w=3.2um
+Mp1 nq i1 vdd vdd pfet_06v0 l=0.6um w=3.2um
+.ends nand2_x0

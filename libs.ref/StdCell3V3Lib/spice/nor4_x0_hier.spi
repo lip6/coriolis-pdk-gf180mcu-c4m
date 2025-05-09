@@ -1,0 +1,12 @@
+* nor4_x0
+* nor4_x0
+.subckt nor4_x0 vdd vss nq i0 i1 i2 i3
+Mn0 vss i0 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp0 vdd i0 int0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn1 nq i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp1 int0 i1 int1 vdd pfet_03v3 l=0.28um w=4.2um
+Mn2 vss i2 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp2 int1 i2 int2 vdd pfet_03v3 l=0.28um w=4.2um
+Mn3 nq i3 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp3 int2 i3 nq vdd pfet_03v3 l=0.28um w=4.2um
+.ends nor4_x0

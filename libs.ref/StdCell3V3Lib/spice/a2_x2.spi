@@ -1,0 +1,9 @@
+* a2_x2
+.subckt a2_x2 vss q vdd i0 i1
+Mn_net0_1 vss _net0 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_net0_1 vdd _net0 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i0_1 _net0 i0 _net1 vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 vdd i0 _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net0 i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net1 i1 vss vss nfet_03v3 l=0.28um w=2.66um
+.ends a2_x2

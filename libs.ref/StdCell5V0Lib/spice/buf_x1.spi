@@ -1,0 +1,7 @@
+* buf_x1
+.subckt buf_x1 vdd vss i q
+Mn1 ni i vss vss nfet_06v0 l=0.6um w=0.8um
+Mn2_0 vss ni q vss nfet_06v0 l=0.6um w=2.88um
+Mp1 ni i vdd vdd pfet_06v0 l=0.6um w=1.6um
+Mp2_0 vdd ni q vdd pfet_06v0 l=0.6um w=5.76um
+.ends buf_x1

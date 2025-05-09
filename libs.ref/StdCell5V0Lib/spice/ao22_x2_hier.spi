@@ -1,0 +1,12 @@
+* ao22_x2
+* ao22_x2
+.subckt ao22_x2 vdd q vss i0 i1 i2
+Mp_net0_1 vdd _net0 q vdd pfet_06v0 l=0.6um w=6.4um
+Mn_net0_1 vss _net0 q vss nfet_06v0 l=0.6um w=3.04um
+Mp_i0_1 vdd i0 _net1 vdd pfet_06v0 l=0.6um w=3.2um
+Mn_i0_1 _net2 i0 _net0 vss nfet_06v0 l=0.6um w=1.6um
+Mn_i1_1 _net0 i1 _net2 vss nfet_06v0 l=0.6um w=1.6um
+Mp_i1_1 _net1 i1 _net0 vdd pfet_06v0 l=0.6um w=3.2um
+Mp_i2_1 _net0 i2 vdd vdd pfet_06v0 l=0.6um w=3.2um
+Mn_i2_1 _net2 i2 vss vss nfet_06v0 l=0.6um w=1.6um
+.ends ao22_x2

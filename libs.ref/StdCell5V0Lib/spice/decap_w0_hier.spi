@@ -1,0 +1,6 @@
+* decap_w0
+* decap_w0
+.subckt decap_w0 vdd vss
+Mn vss one zero vss nfet_06v0 l=0.6um w=5.66um
+Mp one zero vdd vdd pfet_06v0 l=0.6um w=6.3um
+.ends decap_w0

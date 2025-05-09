@@ -1,0 +1,10 @@
+* nor3_x0
+* nor3_x0
+.subckt nor3_x0 vdd vss nq i0 i1 i2
+Mn0 vss i0 nq vss nfet_06v0 l=0.6um w=1.6um
+Mp0 vdd i0 int0 vdd pfet_06v0 l=0.6um w=4.8um
+Mn1 nq i1 vss vss nfet_06v0 l=0.6um w=1.6um
+Mp1 int0 i1 int1 vdd pfet_06v0 l=0.6um w=4.8um
+Mn2 vss i2 nq vss nfet_06v0 l=0.6um w=1.6um
+Mp2 int1 i2 nq vdd pfet_06v0 l=0.6um w=4.8um
+.ends nor3_x0

@@ -1,0 +1,13 @@
+* buf_x4
+.subckt buf_x4 vdd vss i q
+Mn1 ni i vss vss nfet_06v0 l=0.6um w=2.88um
+Mn2_0 vss ni q vss nfet_06v0 l=0.6um w=2.88um
+Mn2_1 q ni vss vss nfet_06v0 l=0.6um w=2.88um
+Mn2_2 vss ni q vss nfet_06v0 l=0.6um w=2.88um
+Mn2_3 q ni vss vss nfet_06v0 l=0.6um w=2.88um
+Mp1 ni i vdd vdd pfet_06v0 l=0.6um w=5.76um
+Mp2_0 vdd ni q vdd pfet_06v0 l=0.6um w=5.76um
+Mp2_1 q ni vdd vdd pfet_06v0 l=0.6um w=5.76um
+Mp2_2 vdd ni q vdd pfet_06v0 l=0.6um w=5.76um
+Mp2_3 q ni vdd vdd pfet_06v0 l=0.6um w=5.76um
+.ends buf_x4

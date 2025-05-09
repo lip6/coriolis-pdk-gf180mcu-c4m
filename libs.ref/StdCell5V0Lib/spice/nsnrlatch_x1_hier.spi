@@ -1,0 +1,12 @@
+* nsnrlatch_x1
+* nsnrlatch_x1
+.subckt nsnrlatch_x1 vss nq q vdd nrst nset
+Mn_nq_1 _net1 nq vss vss nfet_06v0 l=0.6um w=3.2um
+Mp_nq_1 q nq vdd vdd pfet_06v0 l=0.6um w=3.2um
+Mp_nrst_1 nq nrst vdd vdd pfet_06v0 l=0.6um w=3.2um
+Mn_nrst_1 _net0 nrst nq vss nfet_06v0 l=0.6um w=3.2um
+Mp_nset_1 vdd nset q vdd pfet_06v0 l=0.6um w=3.2um
+Mn_nset_1 q nset _net1 vss nfet_06v0 l=0.6um w=3.2um
+Mp_q_1 vdd q nq vdd pfet_06v0 l=0.6um w=3.2um
+Mn_q_1 vss q _net0 vss nfet_06v0 l=0.6um w=3.2um
+.ends nsnrlatch_x1

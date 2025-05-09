@@ -1,0 +1,15 @@
+* mx2_x2
+.subckt mx2_x2 vdd q vss cmd i0 i1
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_net5_1 _net1 _net5 _net4 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_net5_1 _net2 _net5 _net1 vss nfet_03v3 l=0.28um w=1.26um
+Mp_cmd_1 _net5 cmd vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_cmd_2 _net3 cmd _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_cmd_1 _net5 cmd vss vss nfet_03v3 l=0.28um w=1.26um
+Mn_cmd_2 _net1 cmd _net0 vss nfet_03v3 l=0.28um w=1.26um
+Mn_i0_1 vss i0 _net2 vss nfet_03v3 l=0.28um w=1.26um
+Mp_i0_1 vdd i0 _net3 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net4 i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net0 i1 vss vss nfet_03v3 l=0.28um w=1.26um
+.ends mx2_x2

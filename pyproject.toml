@@ -1,0 +1,20 @@
+
+[build-system]
+build-backend = "mesonpy"
+requires = ["meson-python"]
+
+[project]
+name = "coriolis-pdk-gf180mcu-c4m"
+version = "2025.05.07"
+authors = [ { name="Jean-Paul Chaput", email="Jean-Paul.Chaput@lip6.fr" }
+          ]
+description = "PDK for GF180MCU node (180nm) - Chips4Makers"
+readme = "README.rst"
+license = { text="GPL-2.0" }
+keywords = [ "vlsi", "pdk" ]
+classifiers = [ "Development Status :: 3 - Alpha" 
+              , "Programming Language :: Python :: 3.8"
+              ]
+
+[project.urls]
+Homepage = "https://coriolis.lip6.fr/"

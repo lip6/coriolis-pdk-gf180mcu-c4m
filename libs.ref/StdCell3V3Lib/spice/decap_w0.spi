@@ -1,0 +1,5 @@
+* decap_w0
+.subckt decap_w0 vdd vss
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends decap_w0

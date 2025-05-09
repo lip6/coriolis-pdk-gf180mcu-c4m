@@ -1,0 +1,11 @@
+* inv_x4
+.subckt inv_x4 vdd vss i nq
+Mn0 vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mn1 nq i vss vss nfet_03v3 l=0.28um w=2.52um
+Mn2 vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mn3 nq i vss vss nfet_03v3 l=0.28um w=2.52um
+Mp0 vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+Mp1 nq i vdd vdd pfet_03v3 l=0.28um w=5.04um
+Mp2 vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+Mp3 nq i vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends inv_x4

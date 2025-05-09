@@ -1,0 +1,463 @@
+* StdCell3V3Lib
+
+* a2_x2
+.subckt a2_x2 vss q vdd i0 i1
+Mn_net0_1 vss _net0 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_net0_1 vdd _net0 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i0_1 _net0 i0 _net1 vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 vdd i0 _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net0 i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net1 i1 vss vss nfet_03v3 l=0.28um w=2.66um
+.ends a2_x2
+
+* a3_x2
+.subckt a3_x2 vdd q vss i0 i1 i2
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 _net1 i0 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_1 _net1 i0 _net0 vss nfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net0 i1 _net2 vss nfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 vdd i1 _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i2_1 _net2 i2 vss vss nfet_03v3 l=0.28um w=2.8um
+Mp_i2_1 _net1 i2 vdd vdd pfet_03v3 l=0.28um w=2.8um
+.ends a3_x2
+
+* a4_x2
+.subckt a4_x2 vdd q vss i0 i1 i2 i3
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 vdd i0 _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_1 _net1 i0 _net3 vss nfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net1 i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net3 i1 _net0 vss nfet_03v3 l=0.28um w=2.8um
+Mp_i2_1 vdd i2 _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i2_1 _net0 i2 _net2 vss nfet_03v3 l=0.28um w=2.8um
+Mp_i3_1 _net1 i3 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i3_1 _net2 i3 vss vss nfet_03v3 l=0.28um w=2.8um
+.ends a4_x2
+
+* ao22_x2
+.subckt ao22_x2 vdd q vss i0 i1 i2
+Mp_net0_1 vdd _net0 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net0_1 vss _net0 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 vdd i0 _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_1 _net2 i0 _net0 vss nfet_03v3 l=0.28um w=1.4um
+Mn_i1_1 _net0 i1 _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net1 i1 _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i2_1 _net0 i2 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i2_1 _net2 i2 vss vss nfet_03v3 l=0.28um w=1.4um
+.ends ao22_x2
+
+* mx2_x2
+.subckt mx2_x2 vdd q vss cmd i0 i1
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_net5_1 _net1 _net5 _net4 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_net5_1 _net2 _net5 _net1 vss nfet_03v3 l=0.28um w=1.26um
+Mp_cmd_1 _net5 cmd vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_cmd_2 _net3 cmd _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_cmd_1 _net5 cmd vss vss nfet_03v3 l=0.28um w=1.26um
+Mn_cmd_2 _net1 cmd _net0 vss nfet_03v3 l=0.28um w=1.26um
+Mn_i0_1 vss i0 _net2 vss nfet_03v3 l=0.28um w=1.26um
+Mp_i0_1 vdd i0 _net3 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net4 i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net0 i1 vss vss nfet_03v3 l=0.28um w=1.26um
+.ends mx2_x2
+
+* mx3_x2
+.subckt mx3_x2 vdd vss q cmd0 cmd1 i0 i1 i2
+Mp_net3_1 _net5 _net3 _net6 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_net3_1 _net9 _net3 _net5 vss nfet_03v3 l=0.28um w=1.68um
+Mn_net4_1 vss _net4 _net7 vss nfet_03v3 l=0.28um w=1.68um
+Mp_net4_1 _net0 _net4 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_net5_1 vdd _net5 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net5_1 vss _net5 q vss nfet_03v3 l=0.28um w=2.8um
+Mp_cmd0_1 _net4 cmd0 vdd vdd pfet_03v3 l=0.28um w=1.96um
+Mn_cmd0_1 _net4 cmd0 vss vss nfet_03v3 l=0.28um w=0.84um
+Mn_cmd0_2 _net1 cmd0 vss vss nfet_03v3 l=0.28um w=1.68um
+Mp_cmd0_2 vdd cmd0 _net2 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_cmd1_2 _net5 cmd1 _net10 vss nfet_03v3 l=0.28um w=1.68um
+Mn_cmd1_1 vss cmd1 _net3 vss nfet_03v3 l=0.28um w=1.12um
+Mp_cmd1_1 vdd cmd1 _net3 vdd pfet_03v3 l=0.28um w=1.96um
+Mp_cmd1_2 _net8 cmd1 _net5 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_1 _net7 i0 _net5 vss nfet_03v3 l=0.28um w=1.68um
+Mp_i0_1 _net2 i0 _net5 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i1_1 _net6 i1 _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net10 i1 _net1 vss nfet_03v3 l=0.28um w=1.68um
+Mp_i2_1 _net0 i2 _net8 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i2_1 _net1 i2 _net9 vss nfet_03v3 l=0.28um w=1.68um
+.ends mx3_x2
+
+* nsnrlatch_x1
+.subckt nsnrlatch_x1 vss nq q vdd nrst nset
+Mn_nq_1 _net1 nq vss vss nfet_03v3 l=0.28um w=2.8um
+Mp_nq_1 q nq vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_nrst_1 nq nrst vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nrst_1 _net0 nrst nq vss nfet_03v3 l=0.28um w=2.8um
+Mp_nset_1 vdd nset q vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nset_1 q nset _net1 vss nfet_03v3 l=0.28um w=2.8um
+Mp_q_1 vdd q nq vdd pfet_03v3 l=0.28um w=2.8um
+Mn_q_1 vss q _net0 vss nfet_03v3 l=0.28um w=2.8um
+.ends nsnrlatch_x1
+
+* nxr2_x1
+.subckt nxr2_x1 nq vdd vss i0 i1
+Mp_net0_1 nq _net0 _net1 vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net0_1 nq _net0 _net2 vss nfet_03v3 l=0.28um w=2.66um
+Mn_net3_1 _net4 _net3 nq vss nfet_03v3 l=0.28um w=2.66um
+Mp_net3_1 _net1 _net3 vdd vdd pfet_03v3 l=0.28um w=5.6um
+Mp_i0_1 _net0 i0 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_2 vss i0 _net4 vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_2 vdd i0 _net1 vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i0_1 _net0 i0 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net1 i1 nq vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i1_1 _net2 i1 vss vss nfet_03v3 l=0.28um w=2.66um
+Mp_i1_2 vdd i1 _net3 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_2 vss i1 _net3 vss nfet_03v3 l=0.28um w=1.4um
+.ends nxr2_x1
+
+* o2_x2
+.subckt o2_x2 vdd q vss i0 i1
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 _net0 i0 vdd vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i0_1 _net1 i0 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net1 i1 _net0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i1_1 vss i1 _net1 vss nfet_03v3 l=0.28um w=1.4um
+.ends o2_x2
+
+* o3_x2
+.subckt o3_x2 vdd q vss i0 i1 i2
+Mp_net1_1 vdd _net1 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net1_1 vss _net1 q vss nfet_03v3 l=0.28um w=2.66um
+Mn_i0_1 _net1 i0 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i0_1 _net2 i0 vdd vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i1_1 vss i1 _net1 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net0 i1 _net2 vdd pfet_03v3 l=0.28um w=4.2um
+Mp_i2_1 _net1 i2 _net0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i2_1 _net1 i2 vss vss nfet_03v3 l=0.28um w=1.4um
+.ends o3_x2
+
+* o4_x2
+.subckt o4_x2 vdd q vss i0 i1 i2 i3
+Mp_net2_1 vdd _net2 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net2_1 vss _net2 q vss nfet_03v3 l=0.28um w=2.66um
+Mn_i0_1 vss i0 _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i0_1 _net3 i0 _net0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i1_1 _net2 i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net1 i1 _net3 vdd pfet_03v3 l=0.28um w=4.2um
+Mp_i2_1 _net0 i2 vdd vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i2_1 _net2 i2 vss vss nfet_03v3 l=0.28um w=1.4um
+Mn_i3_1 vss i3 _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i3_1 _net2 i3 _net1 vdd pfet_03v3 l=0.28um w=4.2um
+.ends o4_x2
+
+* oa22_x2
+.subckt oa22_x2 vdd q vss i0 i1 i2
+Mp_net0_1 vdd _net0 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net0_1 vss _net0 q vss nfet_03v3 l=0.28um w=2.66um
+Mn_i0_1 vss i0 _net2 vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_1 _net1 i0 _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i1_1 _net2 i1 _net0 vss nfet_03v3 l=0.28um w=2.66um
+Mp_i1_1 _net0 i1 _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i2_1 _net1 i2 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i2_1 _net0 i2 vss vss nfet_03v3 l=0.28um w=2.66um
+.ends oa22_x2
+
+* powmid_x0
+.subckt powmid_x0 vss vdd
+
+.ends powmid_x0
+
+* sff1_x4
+.subckt sff1_x4 vss ck vdd i q
+Mn_ck nckr ck vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_ck nckr ck vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_ckr_2 sff_s ckr _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_ckr_1 sff_m ckr _net4 vss nfet_03v3 l=0.28um w=1.4um
+Mn_ckr_2 y ckr sff_s vss nfet_03v3 l=0.28um w=1.4um
+Mp_ckr_1 _net1 ckr sff_m vdd pfet_03v3 l=0.28um w=2.8um
+Mp_i u i vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i u i vss vss nfet_03v3 l=0.28um w=1.4um
+Mn_nckr_1 vss nckr ckr vss nfet_03v3 l=0.28um w=1.4um
+Mp_nckr_1 vdd nckr ckr vdd pfet_03v3 l=0.28um w=2.8um
+Mp_nckr_2 sff_m nckr _net5 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_nckr_3 y nckr sff_s vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nckr_2 _net2 nckr sff_m vss nfet_03v3 l=0.28um w=1.4um
+Mn_nckr_3 sff_s nckr _net6 vss nfet_03v3 l=0.28um w=1.4um
+Mn_q_1 _net6 q vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_q_1 _net0 q vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp_sffm_1 vdd sff_m y vdd pfet_03v3 l=0.28um w=2.8um
+Mn_sffm_1 vss sff_m y vss nfet_03v3 l=0.28um w=1.26um
+Mp_sffs_1 vdd sff_s q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_sffs_1 vss sff_s q vss nfet_03v3 l=0.28um w=2.66um
+Mp_sffs_2 q sff_s vdd vdd pfet_03v3 l=0.28um w=5.6um
+Mn_sffs_2 q sff_s vss vss nfet_03v3 l=0.28um w=2.66um
+Mn_u vss u _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_u vdd u _net1 vdd pfet_03v3 l=0.28um w=2.8um
+Mp_y_1 _net5 y vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_y_1 _net4 y vss vss nfet_03v3 l=0.28um w=1.26um
+.ends sff1_x4
+
+* sff1r_x4
+.subckt sff1r_x4 vdd ck vss i nrst q
+Mp_ck_1 nckr ck vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_ck_1 nckr ck vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_ckr_1 _net0 ckr sff_m vdd pfet_03v3 l=0.28um w=2.8um
+Mn_ckr_2 y ckr sff_s vss nfet_03v3 l=0.28um w=1.4um
+Mp_ckr_2 sff_s ckr _net3 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_ckr_1 sff_m ckr _net6 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i_1 u i vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i_1 u i vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_nckr_1 vdd nckr ckr vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nckr_1 vss nckr ckr vss nfet_03v3 l=0.28um w=1.4um
+Mp_nckr_3 y nckr sff_s vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nckr_2 _net7 nckr sff_m vss nfet_03v3 l=0.28um w=1.4um
+Mn_nckr_3 sff_s nckr _net8 vss nfet_03v3 l=0.28um w=1.4um
+Mp_nckr_2 sff_m nckr _net2 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nrst_2 _net8 nrst _net5 vss nfet_03v3 l=0.28um w=1.4um
+Mp_nrst_1 y nrst vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_nrst_1 _net4 nrst y vss nfet_03v3 l=0.28um w=1.26um
+Mp_nrst_2 vdd nrst _net3 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_q_1 _net5 q vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_q_1 _net3 q vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_sffm_1 vss sff_m _net4 vss nfet_03v3 l=0.28um w=1.26um
+Mp_sffm_1 vdd sff_m y vdd pfet_03v3 l=0.28um w=2.8um
+Mn_sffs_1 vss sff_s q vss nfet_03v3 l=0.28um w=2.66um
+Mn_sffs_2 q sff_s vss vss nfet_03v3 l=0.28um w=2.66um
+Mp_sffs_1 vdd sff_s q vdd pfet_03v3 l=0.28um w=5.6um
+Mp_sffs_2 q sff_s vdd vdd pfet_03v3 l=0.28um w=5.6um
+Mp_u_1 vdd u _net0 vdd pfet_03v3 l=0.28um w=2.8um
+Mn_u_1 vss u _net7 vss nfet_03v3 l=0.28um w=1.4um
+Mp_y_1 _net2 y vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_y_1 _net6 y vss vss nfet_03v3 l=0.28um w=1.26um
+.ends sff1r_x4
+
+* xr2_x1
+.subckt xr2_x1 q vdd vss i0 i1
+Mp_net0_1 q _net0 _net2 vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net0_1 q _net0 _net4 vss nfet_03v3 l=0.28um w=2.66um
+Mp_net3_1 _net2 _net3 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net3_1 _net4 _net3 vss vss nfet_03v3 l=0.28um w=2.66um
+Mp_i0_2 vdd i0 _net2 vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i0_1 _net0 i0 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i0_1 _net0 i0 vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mn_i0_2 vss i0 _net1 vss nfet_03v3 l=0.28um w=2.66um
+Mn_i1_1 _net1 i1 q vss nfet_03v3 l=0.28um w=2.66um
+Mp_i1_1 _net2 i1 vdd vdd pfet_03v3 l=0.28um w=5.6um
+Mn_i1_2 vss i1 _net3 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_2 vdd i1 _net3 vdd pfet_03v3 l=0.28um w=2.8um
+.ends xr2_x1
+
+* fill
+.subckt fill vdd vss
+
+.ends fill
+
+* tie
+.subckt tie vdd vss
+
+.ends tie
+
+* tie_diff
+.subckt tie_diff vdd vss
+
+.ends tie_diff
+
+* tie_poly
+.subckt tie_poly vdd vss
+
+.ends tie_poly
+
+* fill_w2
+.subckt fill_w2 vdd vss
+
+.ends fill_w2
+
+* tie_w2
+.subckt tie_w2 vdd vss
+
+.ends tie_w2
+
+* tie_diff_w2
+.subckt tie_diff_w2 vdd vss
+
+.ends tie_diff_w2
+
+* tie_poly_w2
+.subckt tie_poly_w2 vdd vss
+
+.ends tie_poly_w2
+
+* fill_w4
+.subckt fill_w4 vdd vss
+
+.ends fill_w4
+
+* tie_w4
+.subckt tie_w4 vdd vss
+
+.ends tie_w4
+
+* tie_diff_w4
+.subckt tie_diff_w4 vdd vss
+
+.ends tie_diff_w4
+
+* tie_poly_w4
+.subckt tie_poly_w4 vdd vss
+
+.ends tie_poly_w4
+
+* diode_w1
+.subckt diode_w1 vdd vss i
+
+.ends diode_w1
+
+* zero_x1
+.subckt zero_x1 vdd vss zero
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends zero_x1
+
+* one_x1
+.subckt one_x1 vdd vss one
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends one_x1
+
+* zeroone_x1
+.subckt zeroone_x1 vdd vss zero one
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends zeroone_x1
+
+* decap_w0
+.subckt decap_w0 vdd vss
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends decap_w0
+
+* inv_x0
+.subckt inv_x0 vdd vss i nq
+Mn vss i nq vss nfet_03v3 l=0.28um w=1.4um
+Mp vdd i nq vdd pfet_03v3 l=0.28um w=2.8um
+.ends inv_x0
+
+* inv_x1
+.subckt inv_x1 vdd vss i nq
+Mn vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mp vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+.ends inv_x1
+
+* inv_x2
+.subckt inv_x2 vdd vss i nq
+Mn0 vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mn1 nq i vss vss nfet_03v3 l=0.28um w=2.52um
+Mp0 vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+Mp1 nq i vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends inv_x2
+
+* inv_x4
+.subckt inv_x4 vdd vss i nq
+Mn0 vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mn1 nq i vss vss nfet_03v3 l=0.28um w=2.52um
+Mn2 vss i nq vss nfet_03v3 l=0.28um w=2.52um
+Mn3 nq i vss vss nfet_03v3 l=0.28um w=2.52um
+Mp0 vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+Mp1 nq i vdd vdd pfet_03v3 l=0.28um w=5.04um
+Mp2 vdd i nq vdd pfet_03v3 l=0.28um w=5.04um
+Mp3 nq i vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends inv_x4
+
+* buf_x1
+.subckt buf_x1 vdd vss i q
+Mn1 ni i vss vss nfet_03v3 l=0.28um w=0.7um
+Mn2_0 vss ni q vss nfet_03v3 l=0.28um w=2.52um
+Mp1 ni i vdd vdd pfet_03v3 l=0.28um w=1.4um
+Mp2_0 vdd ni q vdd pfet_03v3 l=0.28um w=5.04um
+.ends buf_x1
+
+* buf_x2
+.subckt buf_x2 vdd vss i q
+Mn1 ni i vss vss nfet_03v3 l=0.28um w=1.4um
+Mn2_0 vss ni q vss nfet_03v3 l=0.28um w=2.52um
+Mn2_1 q ni vss vss nfet_03v3 l=0.28um w=2.52um
+Mp1 ni i vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp2_0 vdd ni q vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_1 q ni vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends buf_x2
+
+* buf_x4
+.subckt buf_x4 vdd vss i q
+Mn1 ni i vss vss nfet_03v3 l=0.28um w=2.52um
+Mn2_0 vss ni q vss nfet_03v3 l=0.28um w=2.52um
+Mn2_1 q ni vss vss nfet_03v3 l=0.28um w=2.52um
+Mn2_2 vss ni q vss nfet_03v3 l=0.28um w=2.52um
+Mn2_3 q ni vss vss nfet_03v3 l=0.28um w=2.52um
+Mp1 ni i vdd vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_0 vdd ni q vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_1 q ni vdd vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_2 vdd ni q vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_3 q ni vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends buf_x4
+
+* nand2_x0
+.subckt nand2_x0 vdd vss nq i0 i1
+Mn0 vss i0 int0 vss nfet_03v3 l=0.28um w=2.8um
+Mp0 vdd i0 nq vdd pfet_03v3 l=0.28um w=2.8um
+Mn1 int0 i1 nq vss nfet_03v3 l=0.28um w=2.8um
+Mp1 nq i1 vdd vdd pfet_03v3 l=0.28um w=2.8um
+.ends nand2_x0
+
+* nand3_x0
+.subckt nand3_x0 vdd vss nq i0 i1 i2
+Mn0 vss i0 int0 vss nfet_03v3 l=0.28um w=3.5um
+Mp0 vdd i0 nq vdd pfet_03v3 l=0.28um w=3.5um
+Mn1 int0 i1 int1 vss nfet_03v3 l=0.28um w=3.5um
+Mp1 nq i1 vdd vdd pfet_03v3 l=0.28um w=3.5um
+Mn2 int1 i2 nq vss nfet_03v3 l=0.28um w=3.5um
+Mp2 vdd i2 nq vdd pfet_03v3 l=0.28um w=3.5um
+.ends nand3_x0
+
+* nand4_x0
+.subckt nand4_x0 vdd vss nq i0 i1 i2 i3
+Mn0 vss i0 int0 vss nfet_03v3 l=0.28um w=3.5um
+Mp0 vdd i0 nq vdd pfet_03v3 l=0.28um w=3.5um
+Mn1 int0 i1 int1 vss nfet_03v3 l=0.28um w=3.5um
+Mp1 nq i1 vdd vdd pfet_03v3 l=0.28um w=3.5um
+Mn2 int1 i2 int2 vss nfet_03v3 l=0.28um w=3.5um
+Mp2 vdd i2 nq vdd pfet_03v3 l=0.28um w=3.5um
+Mn3 int2 i3 nq vss nfet_03v3 l=0.28um w=3.5um
+Mp3 nq i3 vdd vdd pfet_03v3 l=0.28um w=3.5um
+.ends nand4_x0
+
+* nor2_x0
+.subckt nor2_x0 vdd vss nq i0 i1
+Mn0 vss i0 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp0 vdd i0 int0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn1 nq i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp1 int0 i1 nq vdd pfet_03v3 l=0.28um w=4.2um
+.ends nor2_x0
+
+* nor3_x0
+.subckt nor3_x0 vdd vss nq i0 i1 i2
+Mn0 vss i0 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp0 vdd i0 int0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn1 nq i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp1 int0 i1 int1 vdd pfet_03v3 l=0.28um w=4.2um
+Mn2 vss i2 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp2 int1 i2 nq vdd pfet_03v3 l=0.28um w=4.2um
+.ends nor3_x0
+
+* nor4_x0
+.subckt nor4_x0 vdd vss nq i0 i1 i2 i3
+Mn0 vss i0 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp0 vdd i0 int0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn1 nq i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp1 int0 i1 int1 vdd pfet_03v3 l=0.28um w=4.2um
+Mn2 vss i2 nq vss nfet_03v3 l=0.28um w=1.4um
+Mp2 int1 i2 int2 vdd pfet_03v3 l=0.28um w=4.2um
+Mn3 nq i3 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp3 int2 i3 nq vdd pfet_03v3 l=0.28um w=4.2um
+.ends nor4_x0

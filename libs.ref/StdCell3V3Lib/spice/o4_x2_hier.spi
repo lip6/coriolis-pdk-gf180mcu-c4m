@@ -1,0 +1,14 @@
+* o4_x2
+* o4_x2
+.subckt o4_x2 vdd q vss i0 i1 i2 i3
+Mp_net2_1 vdd _net2 q vdd pfet_03v3 l=0.28um w=5.6um
+Mn_net2_1 vss _net2 q vss nfet_03v3 l=0.28um w=2.66um
+Mn_i0_1 vss i0 _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i0_1 _net3 i0 _net0 vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i1_1 _net2 i1 vss vss nfet_03v3 l=0.28um w=1.4um
+Mp_i1_1 _net1 i1 _net3 vdd pfet_03v3 l=0.28um w=4.2um
+Mp_i2_1 _net0 i2 vdd vdd pfet_03v3 l=0.28um w=4.2um
+Mn_i2_1 _net2 i2 vss vss nfet_03v3 l=0.28um w=1.4um
+Mn_i3_1 vss i3 _net2 vss nfet_03v3 l=0.28um w=1.4um
+Mp_i3_1 _net2 i3 _net1 vdd pfet_03v3 l=0.28um w=4.2um
+.ends o4_x2

@@ -1,0 +1,10 @@
+* buf_x2
+* buf_x2
+.subckt buf_x2 vdd vss i q
+Mn1 ni i vss vss nfet_03v3 l=0.28um w=1.4um
+Mn2_0 vss ni q vss nfet_03v3 l=0.28um w=2.52um
+Mn2_1 q ni vss vss nfet_03v3 l=0.28um w=2.52um
+Mp1 ni i vdd vdd pfet_03v3 l=0.28um w=2.8um
+Mp2_0 vdd ni q vdd pfet_03v3 l=0.28um w=5.04um
+Mp2_1 q ni vdd vdd pfet_03v3 l=0.28um w=5.04um
+.ends buf_x2

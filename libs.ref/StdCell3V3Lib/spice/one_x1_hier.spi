@@ -1,0 +1,6 @@
+* one_x1
+* one_x1
+.subckt one_x1 vdd vss one
+Mn vss one zero vss nfet_03v3 l=0.28um w=4.7um
+Mp one zero vdd vdd pfet_03v3 l=0.28um w=5.26um
+.ends one_x1

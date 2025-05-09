@@ -1,0 +1,5 @@
+* inv_x0
+.subckt inv_x0 vdd vss i nq
+Mn vss i nq vss nfet_06v0 l=0.6um w=1.6um
+Mp vdd i nq vdd pfet_06v0 l=0.6um w=3.2um
+.ends inv_x0
