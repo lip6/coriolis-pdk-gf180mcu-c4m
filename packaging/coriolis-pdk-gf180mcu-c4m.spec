@@ -5,7 +5,7 @@
 %if 0%{?is_opensuse}
 %global python3_pkgversion 311
 %endif
-%global         dateVersion    2025.07.28
+%global         dateVersion    2025.7.28
 
 Name:           coriolis-pdk-gf180mcu-c4m
 Version:        %{dateVersion}
@@ -92,6 +92,9 @@ Summary:        %{summary}
       -o \( 0%{?rhel}   -eq  8 \) \
       -o \( 0%{?suse_version}%{?sle_version} -ne 0 \) ]; then
    patchVEnvArgs="${patchVEnvArgs} --remove-venv-watchfiles"
+ fi
+ if [ 0%{?fedora} -ge 39 ]; then
+   patchVEnvArgs="${patchVEnvArgs} --remove-pip"
  fi
  ./patchvenv.sh ${patchVEnvArgs}
  source .venv/bin/activate

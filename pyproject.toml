@@ -5,7 +5,7 @@ requires = ["meson-python"]
 
 [project]
 name = "coriolis-pdk-gf180mcu-c4m"
-version = "2025.05.07"
+version = "2025.7.28"
 authors = [ { name="Jean-Paul Chaput", email="Jean-Paul.Chaput@lip6.fr" }
           ]
 description = "PDK for GF180MCU node (180nm) - Chips4Makers"

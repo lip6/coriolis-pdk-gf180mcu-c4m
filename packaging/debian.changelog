@@ -1,4 +1,4 @@
-coriolis-pdk-ihpsg13g2-c4m (2025.07.28) unstable; urgency=low
+coriolis-pdk-gf180mcu-c4m (2025.7.28) unstable; urgency=low
 
   * Initial release. Closes: #00001
   * Updated debian packages files

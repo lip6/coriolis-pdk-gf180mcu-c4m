@@ -1,7 +1,7 @@
 
   venvVersion="2.5.5"
  venvSnapshot="venv-al9-${venvVersion}.tar.gz"
-      version="2025.07.28"
+      version="2025.7.28"
        obsDir="../coriolis-obs/home:jpc-lip6/coriolis-pdk-gf180mcu-c4m"
 
  printHelp () {

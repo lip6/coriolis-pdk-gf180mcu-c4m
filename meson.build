@@ -1,7 +1,7 @@
 
 project(
   'coriolis-pdk-gf180mcu-c4m',
-   version:  '2025.05.07',
+   version:  '2025.7.28',
    meson_version: '>= 1.2.0',
 )
 
