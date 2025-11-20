@@ -20,6 +20,7 @@ def setup ( checkToolkit=None ):
     from coriolis                     import CRL 
     from coriolis.helpers             import overlay, l, u, n
     from coriolis.designflow.yosys    import Yosys
+    from coriolis.designflow.iverilog import Iverilog
     from coriolis.designflow.klayout  import Klayout
     from coriolis.designflow.tasyagle import TasYagle
     from .techno                      import setup as techno_setup 
@@ -35,7 +36,7 @@ def setup ( checkToolkit=None ):
     StdCellLib_setup()
     iolib_setup( pdkGFTop )
 
-    liberty  = pdkMasterTop / 'libs.ref' / 'StdCell3V3Lib' / 'liberty' / 'StdCell3V3Lib_nom.lib'
+    liberty = pdkMasterTop / 'libs.ref' / 'StdCell3V3Lib' / 'liberty' / 'StdCell3V3Lib_nom.lib'
     
     with overlay.CfgCache(priority=Cfg.Parameter.Priority.UserFile) as cfg:
         cfg.misc.catchCore           = False
