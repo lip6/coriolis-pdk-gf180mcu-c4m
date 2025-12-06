@@ -1,11 +1,24 @@
-%global python3_pkgversion 3.11
-%if 0%{?rhel} >= 9 || 0%{?fedora} >= 39
+
 %global python3_pkgversion 3
+
+%if 0%{?rhel} && 0%{?rhel} < 9
+%global python3_pkgversion 3.11
 %endif
+
+%if 0%{?fedora} && 0%{?fedora} < 39
+%global python3_pkgversion 3.11
+%endif
+
 %if 0%{?is_opensuse}
+%global _pyproject_wheeldir %{_builddir}/coriolis-pdk-ihpsg13g2-%{version}/build
+%if 0%{?sle_version} == 150600
 %global python3_pkgversion 311
+%global python3_sitearch /usr/lib64/python3.11/site-packages
 %endif
+%endif
+
 %global         dateVersion    2025.7.28
+
 
 Name:           coriolis-pdk-gf180mcu-c4m
 Version:        %{dateVersion}
@@ -42,11 +55,9 @@ BuildRequires:  python%{python3_pkgversion}-wheel
 %endif
 
 %if 0%{?is_opensuse}
-%global _pyproject_wheeldir %{_builddir}/coriolis-pdk-gf180mcu-c4m-%{version}/build
-%global python3_sitearch /usr/lib64/python3.11/site-packages
-
 BuildRequires:  meson
 BuildRequires:  %{python_module devel}
+BuildRequires:  %{python_module pip}
 BuildRequires:  %{python_module setuptools}
 %endif
 
@@ -93,9 +104,14 @@ Summary:        %{summary}
       -o \( 0%{?suse_version}%{?sle_version} -ne 0 \) ]; then
    patchVEnvArgs="${patchVEnvArgs} --remove-venv-watchfiles"
  fi
- if [ 0%{?fedora} -ge 39 ]; then
-   patchVEnvArgs="${patchVEnvArgs} --remove-pip"
- fi
+%if 0%{?fedora} >= 39 || 0%{?rhel} >= 10
+ patchVEnvArgs="${patchVEnvArgs} --remove-pip"
+%endif
+%if 0%{?is_opensuse}
+%if 0%{?suse_version} >= 1600
+ patchVEnvArgs="${patchVEnvArgs} --remove-pip"
+%endif
+%endif
  ./patchvenv.sh ${patchVEnvArgs}
  source .venv/bin/activate
  pip list
