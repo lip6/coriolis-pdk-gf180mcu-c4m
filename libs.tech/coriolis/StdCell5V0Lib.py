@@ -88,7 +88,7 @@ def _routing():
     setEnclosures(via, metal, (u(0.06), u(0.09)))
     rg.addLayerGauge(CRL.RoutingLayerGauge.create(
         metal, CRL.RoutingLayerGauge.Horizontal, CRL.RoutingLayerGauge.Default, 5, 0.0,
-        u(0.0), u(0.876), u(0.44), u(0.44), u(0.26), u(0.436),
+        u(0.0), u(0.9), u(0.44), u(0.44), u(0.26), u(0.0),
     ))
     af.addRoutingGauge(rg)
     af.setRoutingGauge('StdCell5V0Lib')
