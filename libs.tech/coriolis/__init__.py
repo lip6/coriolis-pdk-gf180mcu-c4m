@@ -1,6 +1,5 @@
 
 from pathlib import Path
-from coriolis.designflow.technos import Where
 from coriolis.designflow.task    import ShellEnv
 
 
@@ -11,7 +10,7 @@ pdkMasterTop = None
 pdkGFTop     = None
 
 
-def setup ( checkToolkit=None ):
+def setup ():
     global pdkMasterTop
     global pdkGFTop
 
@@ -22,6 +21,8 @@ def setup ( checkToolkit=None ):
     from coriolis.designflow.yosys    import Yosys
     from coriolis.designflow.iverilog import Iverilog
     from coriolis.designflow.klayout  import Klayout
+    from coriolis.designflow.lvx      import Lvx
+    from coriolis.designflow.x2y      import x2y
     from coriolis.designflow.tasyagle import TasYagle
     from .techno                      import setup as techno_setup 
     from .StdCell3V3Lib               import setup as StdCellLib_setup
@@ -30,7 +31,6 @@ def setup ( checkToolkit=None ):
     pdkGFTop     = Path( __file__ ).parents[1] / 'gf180mcu'
     pdkMasterTop = Path( __file__ ).parent
 
-    Where( checkToolkit )
 
     techno_setup()
     StdCellLib_setup()
@@ -57,5 +57,35 @@ def setup ( checkToolkit=None ):
         env = af.getEnvironment()
         env.setCLOCK( '^sys_clk$|^ck|^jtag_tck$' )
 
+
+    spiceCells     = pdkMasterTop / 'libs.ref' / 'StdCell3V3Lib' / 'spice'
+    stdCellLibVlog = pdkMasterTop / 'libs.ref' / 'StdCell3V3Lib' / 'verilog'/ 'stdcell.v'
+    ngspiceTech    = pdkMasterTop / 'ngspice'
+    klayoutTech    = pdkGFTop / 'libraries' / 'gf180mcu_fd_pr' / 'latest' / 'tech' / 'klayout'
+    corner         = pdkGFTop / 'corner'
+    kdrcRulesC4M   = pdkMasterTop / 'klayout' / 'tech' / 'C4M.gf180mcu' / 'drc' / 'DRC.lydrc'
+    lypFile        = klayoutTech  / 'gf180mcu.lyp'
     Yosys.setLiberty( liberty )
-    ShellEnv.CHECK_TOOLKIT = Where.checkToolkit.as_posix()
+    shellEnv = ShellEnv( 'GF180_c4m GF Alliance Environment' )
+    shellEnv[ 'MBK_CATA_LIB' ] = shellEnv[ 'MBK_CATA_LIB' ] + ':' + spiceCells.as_posix()
+    shellEnv.export()
+    Iverilog.setStdCellLib( stdCellLibVlog )
+    Klayout.setLypFile( lypFile )
+    #DRC.setDrcRules( kdrcRulesC4M, DRC.C4M )
+    #TODO incompleted DRC rules
+    #DRC.setDrcRules( kdrcRulesMax, DRC.Maximal )
+    #TODO sealring and filler
+
+    TasYagle.flags         = TasYagle.Transistor
+    TasYagle.SpiceType     = 'hspice'
+    TasYagle.SpiceTrModel  = [ corner/'typical.lib','design.ngspice','sm141064.ngspice']
+    TasYagle.MBK_CATA_LIB  = (pdkMasterTop/'libs.ref'/'StdCell3V3Lib'/'spice').as_posix() + ':'+ '.:' + (ngspiceTech).as_posix()
+    Lvx.MBK_CATA_LIB       = TasYagle.MBK_CATA_LIB
+    x2y.MBK_CATA_LIB       = TasYagle.MBK_CATA_LIB
+    TasYagle.MBK_SPI_MODEL = ''
+    TasYagle.Temperature   = 25.0
+    TasYagle.VddSupply     = 5.0 
+    TasYagle.VddName       = 'vdd'
+    TasYagle.VssName       = 'vss'
+    TasYagle.ClockName     = 'clk'
+

@@ -173,6 +173,7 @@ def _routing():
         cfg.clockTree.placerEngine = 'Etesian'
         cfg.block.spareSide = 10
         cfg.spares.buffer = 'buf_x4'
+        cfg.spares.hfnsBuffer = 'buf_x4'
         cfg.spares.maxSinks = 31
 
 
