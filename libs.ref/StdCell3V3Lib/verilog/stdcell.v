@@ -833,7 +833,7 @@ module sff1_x4 (ck, i, q);
   wire u;
   wire ck_delayed;
 
-  assign ck'delayed = 1'bx;
+  assign ck_delayed = 1'bx;
   assign u = ~(i);
 
 always @ (posedge ck)

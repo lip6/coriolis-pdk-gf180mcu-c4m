@@ -16,7 +16,9 @@ install_subdir( 'libs.tech/ngspice', install_dir:pdks_dir )
 cells_files = [ 'libs.tech/coriolis/__init__.py'
               , 'libs.tech/coriolis/techno.py'
               , 'libs.tech/coriolis/StdCell3V3Lib.py'
+              , 'libs.tech/coriolis/StdCell3V3Lib_fix.py'
               , 'libs.tech/coriolis/StdCell5V0Lib.py'
+              , 'libs.tech/coriolis/StdCell5V0Lib_fix.py'
               , 'libs.tech/coriolis/iolib.py'
               ]
 
