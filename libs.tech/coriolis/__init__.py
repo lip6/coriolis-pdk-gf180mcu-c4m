@@ -1,7 +1,7 @@
 
 from pathlib import Path
 from coriolis.designflow.task    import ShellEnv
-
+from coriolis.technos.common.dft import DftStdCells
 
 __all__ = [ 'setup', 'pdkGFTop', 'pdkMasterTop' ]
 
@@ -89,3 +89,55 @@ def setup ():
     TasYagle.VssName       = 'vss'
     TasYagle.ClockName     = 'clk'
 
+
+
+
+def getDftStdCells():
+    dft = DftStdCells()
+
+    # -------- Supported flip-flops (no native scan FF available) --------
+    dft.dff_names = [
+        "sff1_x4",
+        "sff1r_x4",
+    ]
+
+    # -------- No mapping FF → Scan FF (will trigger mux-based scan insertion) --------
+    dft.ff_to_scanff = {
+        # empty → fallback to mux + FF creation
+    }
+
+    # -------- Fallback cells (used to build scan FFs) --------
+    dft.mux_name = "mx2_x2"
+    dft.buf_name = "buf_x1"
+
+    # -------- Functional FF pin mapping --------
+    dft.ff_pins = {
+        "d": "i",
+        "q": "q",
+    }
+
+    # -------- Scan control pins (must be defined even if generated) --------
+    dft.scan_pins = {
+        "si": "SI",
+        "se": "SE",
+    }
+
+    # -------- Mux pin mapping --------
+    dft.mux_pins = {
+        "i0": "i0",
+        "i1": "i1",
+        "sel": "cmd",
+        "out": "q",
+    }
+
+    # -------- Buffer pin mapping --------
+    dft.buf_pins = {
+        "i": "i",
+        "z": "q",
+    }
+
+    # -------- Placement orientations --------
+    dft.mux_orientation = "ID"
+    dft.ff_orientation  = "ID"
+
+    return dft
